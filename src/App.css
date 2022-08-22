@@ -19,7 +19,7 @@
   padding: 30px;
   box-sizing: border-box;
   border-radius: 10px;
-  box-shadow: 3px 6px 40px #0000;
+  box-shadow: 3px 6px 30px #a427a4;
   margin-bottom: 10px;
 }
 
@@ -37,8 +37,12 @@
   font-size: 20px;
   color: #ccc;
   background-color: #333232;
-  border: 1px solid #c89666;
+  border: 1px solid #e6ecf0;
   border-radius: 10px;
+}
+
+.todo-input:focus {
+  border: 1px solid #a427a4;
 }
 
 .button-add {
@@ -48,7 +52,12 @@
   border-radius: 10px;
   border: 0;
   background-color: #a427a4;
+  color: #e6ecf0;
   cursor: pointer;
+}
+
+.button-add:hover {
+  background-color: #ad50ad;
 }
 
 .todo-item {
