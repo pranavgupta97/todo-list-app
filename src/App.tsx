@@ -1,17 +1,12 @@
-import React, { useState } from "react";
-import Header from "./components/Header";
-import TodoForm from "./components/TodoForm";
-import Todos from "./components/Todos";
-import "./App.css";
-
-type Todo = {
-  id: string;
-  text: string;
-  completed: boolean;
-};
+import React, { useState } from 'react';
+import Header from './components/Header';
+import TodoForm from './components/TodoForm';
+import Todos from './components/Todos';
+import './App.css';
+import { Todo } from './types/TodoType';
 
 const App = () => {
-  const [todoInput, setTodoInput] = useState("");
+  const [todoInput, setTodoInput] = useState('');
   const [todoItems, setTodoItems] = useState([] as Todo[]);
   const [editTodo, setEditTodo] = useState(null as unknown as Todo);
 

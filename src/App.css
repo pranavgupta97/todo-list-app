@@ -16,11 +16,23 @@
   background-color: #161617;
   min-width: 450px;
   min-height: 650px;
+  max-height: 650px;
   padding: 30px;
   box-sizing: border-box;
   border-radius: 10px;
   box-shadow: 3px 6px 30px #a427a4;
   margin-bottom: 10px;
+  overflow-y: auto;
+}
+
+.todo-container::-webkit-scrollbar {
+  background-color: inherit;
+  width: 12px;
+}
+
+.todo-container::-webkit-scrollbar-thumb {
+  background-color: #333232;
+  border-radius: 10px;
 }
 
 .header h1 {
@@ -115,7 +127,7 @@
 }
 
 .todo-list {
-  width: 220px;
+  width: 240px;
   background-color: inherit;
   border: none;
   color: #ccc;

@@ -1,15 +1,7 @@
-import React, { FC } from "react";
+import React, { FC } from 'react';
 
-type Todo = {
-  id: string;
-  text: string;
-  completed: boolean;
-};
-
-interface TodosProps {
-  todoItems: Todo[];
-  setTodoItems: any;
-}
+import TodosProps from '../interfaces/TodosProps';
+import { Todo } from '../types/TodoType';
 
 const Todos: FC<TodosProps> = ({ todoItems, setTodoItems }) => {
   const onDoneClick = (todoItem: Todo) => {
@@ -27,19 +19,19 @@ const Todos: FC<TodosProps> = ({ todoItems, setTodoItems }) => {
   const onDeleteClick = (todoItem: Todo) => {
     setTodoItems((previousTodoItems: Todo[]) => {
       return previousTodoItems.filter(
-        (previousTodoItem) => previousTodoItem.id !== todoItem.id
+        (previousTodoItem) => previousTodoItem.id !== todoItem.id,
       );
     });
   };
 
   return (
-    <div>
+    <div className="todo-list-container">
       {todoItems.map((todoItem) => (
         <li className="todo-item" key={todoItem.id}>
           <input
             type="text"
             value={todoItem.text}
-            className={`todo-list ${todoItem.completed ? "done" : ""}`}
+            className={`todo-list ${todoItem.completed ? 'done' : ''}`}
             onChange={(event) => event.preventDefault()}
           />
           <div>

@@ -1,20 +1,8 @@
-import React, { FC } from "react";
-import { v4 as uuidV4 } from "uuid";
+import React, { FC } from 'react';
+import { v4 as uuidV4 } from 'uuid';
 
-type Todo = {
-  id: string;
-  text: string;
-  completed: boolean;
-};
-
-interface TodoFormProps {
-  todoInput: string;
-  setTodoInput: any;
-  todoItems: Todo[];
-  setTodoItems: any;
-  editTodo: Todo;
-  setEditTodo: any;
-}
+import TodoFormProps from '../interfaces/TodoFormProps';
+import { Todo } from '../types/TodoType';
 
 const TodoForm: FC<TodoFormProps> = ({
   todoInput,
@@ -38,7 +26,7 @@ const TodoForm: FC<TodoFormProps> = ({
           ...todoItems,
         ];
       });
-      setTodoInput("");
+      setTodoInput('');
     } else {
     }
   };
