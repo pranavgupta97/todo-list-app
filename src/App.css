@@ -13,7 +13,7 @@
 }
 
 .todo-container {
-  background-color: #000000ef;
+  background-color: #161617;
   min-width: 450px;
   min-height: 650px;
   padding: 30px;
@@ -81,17 +81,29 @@
 }
 
 .button-done {
-  color: #ff6c6c;
+  color: #ae59ae;
   margin-right: 10px;
+}
+
+.button-done:hover {
+  color: #e182e1;
 }
 
 .button-edit {
-  color: #e2d029;
+  color: #947f94;
   margin-right: 10px;
 }
 
+.button-edit:hover {
+  color: #cfc7cf;
+}
+
 .button-delete {
-  color: lightseagreen;
+  color: #961b1b;
+}
+
+.button-delete:hover {
+  color: #c73838;
 }
 
 .done {
@@ -103,7 +115,7 @@
 
 .todo-list {
   width: 220px;
-  background-color: #5346e9;
+  background-color: inherit;
   border: none;
   color: #ccc;
   font-size: 20px;
