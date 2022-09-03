@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Header from "./components/Header";
 import TodoForm from "./components/TodoForm";
+import Todos from "./components/Todos";
 import "./App.css";
 
 type Todo = {
@@ -12,6 +13,7 @@ type Todo = {
 const App = () => {
   const [todoInput, setTodoInput] = useState("");
   const [todoItems, setTodoItems] = useState([] as Todo[]);
+  const [editTodo, setEditTodo] = useState(null as unknown as Todo);
 
   return (
     <div className="app-container">
@@ -22,7 +24,10 @@ const App = () => {
           setTodoInput={setTodoInput}
           todoItems={todoItems}
           setTodoItems={setTodoItems}
+          editTodo={editTodo}
+          setEditTodo={setEditTodo}
         />
+        <Todos todoItems={todoItems} setTodoItems={setTodoItems} />
       </div>
     </div>
   );

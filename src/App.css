@@ -57,7 +57,8 @@
 }
 
 .button-add:hover {
-  background-color: #ad50ad;
+  background-color: #a83ea8;
+  box-shadow: 3px 3px 27px #a427a4;
 }
 
 .todo-item {

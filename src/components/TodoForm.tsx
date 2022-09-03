@@ -6,11 +6,14 @@ type Todo = {
   text: string;
   completed: boolean;
 };
+
 interface TodoFormProps {
   todoInput: string;
   setTodoInput: any;
   todoItems: Todo[];
   setTodoItems: any;
+  editTodo: Todo;
+  setEditTodo: any;
 }
 
 const TodoForm: FC<TodoFormProps> = ({
@@ -18,6 +21,8 @@ const TodoForm: FC<TodoFormProps> = ({
   setTodoInput,
   todoItems,
   setTodoItems,
+  editTodo,
+  setEditTodo,
 }) => {
   const onInputChange = (event: any) => {
     setTodoInput(event.target.value);
@@ -25,13 +30,17 @@ const TodoForm: FC<TodoFormProps> = ({
 
   const onFormSubmit = (event: any) => {
     event.preventDefault();
-    setTodoItems((previousTodoItems: Todo[]) => {
-      return [
-        { id: uuidV4(), text: todoInput, completed: false } as Todo,
-        ...todoItems,
-      ];
-    });
-    setTodoInput("");
+
+    if (!editTodo) {
+      setTodoItems((previousTodoItems: Todo[]) => {
+        return [
+          { id: uuidV4(), text: todoInput, completed: false } as Todo,
+          ...todoItems,
+        ];
+      });
+      setTodoInput("");
+    } else {
+    }
   };
 
   return (
