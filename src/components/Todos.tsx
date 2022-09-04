@@ -3,7 +3,7 @@ import React, { FC } from 'react';
 import TodosProps from '../interfaces/TodosProps';
 import { Todo } from '../types/TodoType';
 
-const Todos: FC<TodosProps> = ({ todoItems, setTodoItems }) => {
+const Todos: FC<TodosProps> = ({ todoItems, setTodoItems, setEditTodo }) => {
   const onDoneClick = (todoItem: Todo) => {
     setTodoItems((previousTodoItems: Todo[]) => {
       return previousTodoItems.map((previousTodoItem) => {
@@ -14,6 +14,15 @@ const Todos: FC<TodosProps> = ({ todoItems, setTodoItems }) => {
         }
       });
     });
+
+    setEditTodo(null as unknown as Todo);
+  };
+
+  const onEditClick = (todoItem: Todo) => {
+    const findEditedTodo = todoItems.find(
+      (editedTodo) => todoItem.id === editedTodo.id,
+    );
+    setEditTodo(findEditedTodo);
   };
 
   const onDeleteClick = (todoItem: Todo) => {
@@ -22,6 +31,8 @@ const Todos: FC<TodosProps> = ({ todoItems, setTodoItems }) => {
         (previousTodoItem) => previousTodoItem.id !== todoItem.id,
       );
     });
+
+    setEditTodo(null as unknown as Todo);
   };
 
   return (
@@ -41,7 +52,10 @@ const Todos: FC<TodosProps> = ({ todoItems, setTodoItems }) => {
             >
               <i className="fa fa-check-circle"></i>
             </button>
-            <button className="button-edit task-button">
+            <button
+              className="button-edit task-button"
+              onClick={() => onEditClick(todoItem)}
+            >
               <i className="fa fa-edit"></i>
             </button>
             <button
