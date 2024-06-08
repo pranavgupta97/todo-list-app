@@ -64,7 +64,7 @@ const TodoForm: FC<TodoFormProps> = ({
       <input
         type="text"
         ref={todoInputTextField}
-        placeholder="Whatchu gots to do bruv...?"
+        placeholder="Get stuff done..."
         className="todo-input"
         value={todoInput}
         required={true}

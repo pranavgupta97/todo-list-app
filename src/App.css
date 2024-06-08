@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: 'JetBrains Mono';
 }
 
 .app-container {
@@ -112,11 +113,11 @@
 }
 
 .button-delete {
-  color: #961b1b;
+  color: #660748;
 }
 
 .button-delete:hover {
-  color: #c73838;
+  color: #a80c76;
 }
 
 .done {
